@@ -14,3 +14,18 @@ fun helloWorld(): Unit {
 fun add(num1: Int, num2: Int): Int {
     return num1 + num2
 }
+
+
+// 2. 변수
+
+// val = value
+// var = variable
+fun hi() {
+
+    val a: Int = 10
+
+    var b: Int = 9
+    b = 100
+
+    val c = 50
+}
