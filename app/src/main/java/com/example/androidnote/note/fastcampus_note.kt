@@ -9,7 +9,7 @@ fun main() {
     var c = b.toInt()
     var d = b.toFloat()
 
-    val sjf: Int? = null
+    val num2: Int? = null
 
     println(name(5, 7))
 
