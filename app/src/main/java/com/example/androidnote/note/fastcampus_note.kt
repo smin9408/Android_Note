@@ -4,31 +4,32 @@ fun main() {
 
     val a = 5
     val b = 10
+    val value = 5
 
-    // 조건문
-    if (a < b) {
-        println("a가 더 크다")
-    } else {
-        println("b가 더 크다")
+    // 조건문 when
+    when (value) {
+        1 -> {
+            println("value is 1")
+        }
+        2 -> {
+            println("value is 2")
+        }
+        3 -> {
+            println("value is 3")
+        }
+        else -> {
+            println("value is ${value}")
+        }
     }
 
-    // 값을 리턴하는 if 사용법
-    val max = if (a < b) {
-        a
-    } else {
-        b
+    // 축약약
+   when (value) {
+        1 -> println("value is 1")
+        2 -> println("value is 2")
+        3 -> println("value is 3")
+        else -> println("value is ${value}")
     }
 
-    // 축약
-    val max2 = if (a < b) a else b
-    println(max)
-
-    // 엘비스 연산자
-    val num1 : Int? = null
-    val num2 = num1 ?: 10
-
-    println(num1)
-    println(num2)
 
 }
 
