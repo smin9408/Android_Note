@@ -23,6 +23,13 @@ fun main() {
     val max2 = if (a < b) a else b
     println(max)
 
+    // 엘비스 연산자
+    val num1 : Int? = null
+    val num2 = num1 ?: 10
+
+    println(num1)
+    println(num2)
+
 }
 
 
