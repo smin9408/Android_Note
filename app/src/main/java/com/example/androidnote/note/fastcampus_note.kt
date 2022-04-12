@@ -2,28 +2,27 @@ package com.example.androidnote.note
 
 fun main() {
 
+    val a = 5
+    val b = 10
+
+    // 조건문
+    if (a < b) {
+        println("a가 더 크다")
+    } else {
+        println("b가 더 크다")
+    }
+
+    // 값을 리턴하는 if 사용법
+    val max = if (a < b) {
+        a
+    } else {
+        b
+    }
+
+    // 축약
+    val max2 = if (a < b) a else b
+    println(max)
+
 }
 
-
-// 연산자
-
-// 산술 연산자
-// +, -, *, /(몫), %(나머지)
-
-// 대입 연산자
-// 좌변 = 우변 (우변 값이 조변에 들어간다)
-
-// 복합 대입 연산자
-// +=, -=, *=, /=, %=
-// a += 10 -> a = a + 10
-
-// 증감 연상자
-// ++, --
-// a++, a--
-
-// 비교 연산자
-// >, <=, ==, !=
-
-// 논리 연산자
-// &&, ||, !
 
