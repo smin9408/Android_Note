@@ -41,6 +41,7 @@ fun main() {
     mNumberList.add(5, 6) // 5번째 인덱스에 6 추가
     mNumberList.add(3, 60) // 5번째 인덱스에 6 추가
     mNumberList.add(6, 100) // 5번째 인덱스에 6 추가
+    mNumberList.add(50) // 5번째 인덱스에 6 추가
     println(mNumberList)
 
 
@@ -52,6 +53,7 @@ fun main() {
     val mNumberMap = mutableMapOf<String, Int>("one" to 1)
     mNumberMap.put("two", 2)
     mNumberMap.put("three", 3)
+    mNumberMap.replace("one",100)
     println(mNumberMap)
 
 
