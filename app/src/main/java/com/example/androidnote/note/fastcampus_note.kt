@@ -88,6 +88,29 @@ fun main() {
         println(i)
     }
 
+    println()
+
+    // 반복하는 방법(11)
+    // while
+    // 조건이 true면 실행문을 무한히 반복
+    var w1: Int = 0
+    var w2: Int = 4
+
+    while (w1 < w2) {
+        println(w1)
+        w1++
+    }
+
+    println()
+
+    // 반복하는 방법(12)
+    // 조건이 false여도 do문을 한번은 실행함
+    do {
+        println("hello")
+        println(w1)
+        w1++
+    } while (w1 < w2)
+
 }
 
 
