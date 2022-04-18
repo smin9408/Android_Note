@@ -4,114 +4,35 @@ package com.example.androidnote.note
 // 반복문
 fun main() {
 
-    val a = mutableListOf<Int>(1, 2, 3, 4, 5, 6, 7, 66, 8, 9)
-    val b = arrayOf(1, 2, 3, 4, 5, 6, 7, 8)
-    val c = arrayOf<String>("a", "b", "c", "d", "e")
-    val d = arrayOf(1, 2, 3, 4, "a", "b", "c", "d", "e")
+    // Class
 
-    // 반복하는 방법(1)
-    for (item in a) {
-        println(item)
-    }
+    // 클래스를 통해서 객체를 만드는 방법
+    // 인스턴스화 -> 인스턴스(객체)
+    Car("v8 engine", "big")
 
-    // 반복하는 방법(2)
-    // index, item 의 이름은 마음대로 정해도 가능
-    // 첫번째 인자는 index, 두번째는 item
-    for ((index, item) in b.withIndex()) {
-        println("index : ${index} value : ${item}")
-    }
+    // 우리가 만든 클래스는 자료형이 된다.
+    val myCar: Car = Car("v8 engine", "big")
 
-    println()
+    val superCar: SuperCar = SuperCar("fast engine", "red", "2door")
+}
 
-    // 반복하는 방법(3)
-    // it은 안드로이드가 정해주는 이름
-    c.forEach {
-        println(it)
-    }
-
-    println()
-
-    // 반복하는 방법(4)
-    // it을 사용하기 싫을 때 하는 방법
-    d.forEach { element ->
-        println(element)
-    }
-
-    println()
-
-    // 반복하는 방법(5)
-    // 람다의 장점 : 직관적임
-    // index를 같이 나타낸다고 직관적으로 알 수 있음
-    d.forEachIndexed { index, i ->
-        println("index : ${index} value : ${i}")
-    }
-
-    println()
-
-    // 반복하는 방법(6)
-    for (i in 0 until a.size) { // until은 마지막을 포함하지 않는다.
-        println(a[i])
-        // a[i] == a.get(i)
-    }
-
-    println()
-
-    // 반복하는 방법(7)
-    // 2칸씩 건너뛰며 반복
-    for (i in 0 until a.size step (2)) {
-        println(a.get(i))
-    }
-
-    println()
-
-    // 반복하는 방법(8)
-    // 뒤에서부터 반복하기
-    for (i in a.size - 1 downTo (0)) {
-        println(a.get(i))
-    }
-
-    println()
-
-    // 반복하는 방법(9)
-    // 뒤에서부터 반복하기
-    // step 가능
-    for (i in a.size - 1 downTo (0) step (2)) {
-        println(a.get(i))
-    }
-
-    println()
-
-    // 반복하는 방법(10)
-    // 0 ~ 10
-    // step 가능
-    for (i in 0..10 step (3)) {
-        println(i)
-    }
-
-    println()
-
-    // 반복하는 방법(11)
-    // while
-    // 조건이 true면 실행문을 무한히 반복
-    var w1: Int = 0
-    var w2: Int = 4
-
-    while (w1 < w2) {
-        println(w1)
-        w1++
-    }
-
-    println()
-
-    // 반복하는 방법(12)
-    // 조건이 false여도 do문을 한번은 실행함
-    do {
-        println("hello")
-        println(w1)
-        w1++
-    } while (w1 < w2)
+// 클래스 만드는 방법(1)
+class Car(var engine: String, var body: String) {
 
 }
 
 
+// 클래스 만드는 방법(2)
+class SuperCar {
+    var engine1: String
+    var body1: String
+    var door1: String
 
+    constructor(engine2: String, body2: String, door2: String) {
+        this.engine1 = engine2
+        this.body1 = body2
+        this.door1 = door2
+    }
+
+
+}
