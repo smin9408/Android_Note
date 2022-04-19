@@ -17,7 +17,7 @@ fun main() {
 }
 
 // 클래스 만드는 방법(1)
-class Car(var engine: String, var body: String) {
+class Car constructor(var engine: String, var body: String) { // constructor 생략가능
 
 }
 
@@ -32,6 +32,34 @@ class SuperCar {
         this.engine1 = engine2
         this.body1 = body2
         this.door1 = door2
+    }
+}
+
+// 클래스 만드는 방법(3)
+class Car2(engine: String, body: String) {
+    var door: String = ""
+
+    // 생성자
+    constructor(engine: String, body: String, door: String) : this(engine, body) {
+        this.door = door
+    }
+}
+
+// 클래스 만드는 방법(4)
+class Car3{
+    var engine: String = ""
+    var body: String = ""
+    var door: String = ""
+
+    constructor(engine: String, body: String){
+        this.engine = engine
+        this.body = body
+    }
+
+    constructor(engine: String, body: String, door: String){
+        this.engine = engine
+        this.body = body
+        this.door = door
     }
 
 
