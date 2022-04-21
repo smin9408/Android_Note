@@ -25,6 +25,9 @@ fun main() {
     println(driveCar2.body)
     println(driveCar2.engine)
 
+    val testClass: TestClass = TestClass()
+    testClass.test(1,2)
+
 }
 
 // 클래스 만드는 방법(1)
@@ -117,4 +120,19 @@ class DriveCar2 {
     fun navi(destination: String) {
         println("${destination}로 목적지가 설정되었습니다")
     }
+}
+
+// 오버로딩
+// class 안에는 같은 변수명이나 같은 함수명이 있을 수 없다.
+// 하지만 함수는 이름이 같아도 파라미터가 다르다면 같은 이름을 사용할 수 있다. (구분을 할 수 있기 때문)
+
+class TestClass() {
+    fun test(a: Int) {
+        println("up")
+    }
+
+    fun test(a: Int, b: Int) {
+        println("down")
+    }
+
 }
