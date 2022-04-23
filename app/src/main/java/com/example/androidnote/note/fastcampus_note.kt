@@ -1,27 +1,25 @@
 package com.example.androidnote.note
 
 
-// 변수의 접근 범위
-// 전역 변수 - 모든 곳에서 접근 가능
-var number10: Int = 10
+// 접근 제어자
+// private 외부에서 사용 불가
 
 fun main() {
-    println(number10)
+    val testAccess: TestAccess = TestAccess("대길이")
+    // testAccess.test()
 
-    val test = Test("god")
-    test.testFun()
-    test.name
-    println(test.name)
-    println(number10)
-
+    // testAccess.name = "대길이븅딱"
+    // testAccess.test()
 }
 
-// 지역 변수
-class Test(var name: String){
-    fun testFun(){
-        var birth : String = "20022-04-22"
-        name = "홍길동"
-        number10 = 100
+class TestAccess{
+    private var name: String = "대길"
+
+    constructor(name: String){
+        this.name = name
+    }
+
+    private fun test(){
+        println(this.name)
     }
 }
-
