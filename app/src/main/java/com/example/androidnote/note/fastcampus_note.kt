@@ -1,25 +1,68 @@
 package com.example.androidnote.note
 
 
-// 접근 제어자
-// private 외부에서 사용 불가
-
 fun main() {
-    val testAccess: TestAccess = TestAccess("대길이")
-    // testAccess.test()
+    val a = mutableListOf<Int>()
+    val b = mutableListOf<Boolean>()
 
-    // testAccess.name = "대길이븅딱"
-    // testAccess.test()
-}
-
-class TestAccess{
-    private var name: String = "대길"
-
-    constructor(name: String){
-        this.name = name
+    for (i in 0..9) {
+        a.add(i)
     }
 
-    private fun test(){
-        println(this.name)
+    for (i in 0..9) {
+        b.add(true)
+    }
+
+    a.forEachIndexed { index, i ->
+        if (i % 2 == 0) {
+            b.set(index, true)
+        } else {
+            b.set(index, false)
+        }
+    }
+
+    println(a)
+    println(b)
+
+    println()
+
+    val grade = score(93)
+    println(grade)
+
+    println()
+
+    val doubleNum = doubleSun(99)
+    println(doubleNum)
+
+    println()
+
+    gugudan()
+}
+
+fun score(num: Int): String {
+    return if (num > 80) {
+        "A"
+    } else if (num > 70) {
+        "B"
+    } else if (num > 60) {
+        "C"
+    } else {
+        "F"
+    }
+}
+
+fun doubleSun(a: Int): Int? {
+    if (a >= 10 && a < 100) {
+        return a / 10 + a % 10
+    } else {
+        return null
+    }
+}
+
+fun gugudan() {
+    for (a in 1..9) {
+        for (b in 1..9) {
+            println("${a} * ${b} = ${a * b}")
+        }
     }
 }
