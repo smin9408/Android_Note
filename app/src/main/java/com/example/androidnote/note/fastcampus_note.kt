@@ -2,67 +2,40 @@ package com.example.androidnote.note
 
 
 fun main() {
-    val a = mutableListOf<Int>()
-    val b = mutableListOf<Boolean>()
-
-    for (i in 0..9) {
-        a.add(i)
-    }
-
-    for (i in 0..9) {
-        b.add(true)
-    }
-
-    a.forEachIndexed { index, i ->
-        if (i % 2 == 0) {
-            b.set(index, true)
-        } else {
-            b.set(index, false)
-        }
-    }
-
-    println(a)
-    println(b)
-
-    println()
-
-    val grade = score(93)
-    println(grade)
-
-    println()
-
-    val doubleNum = doubleSun(99)
-    println(doubleNum)
-
-    println()
-
-    gugudan()
+    val ma1: Math1 = Math1()
+    val m2 = ma1.plus(2,45)
+    println(m2)
+    val ma2: Math2 = Math2(20,310)
+    val m3 = ma2.plus()
+    println(m3)
 }
 
-fun score(num: Int): String {
-    return if (num > 80) {
-        "A"
-    } else if (num > 70) {
-        "B"
-    } else if (num > 60) {
-        "C"
-    } else {
-        "F"
+class Math1(){
+    fun plus(a: Int, b:Int) : Int{
+        return a+b
+    }
+    fun minus(a: Int, b:Int) : Int{
+        return a-b
+    }
+    fun gop(a: Int, b:Int) : Int{
+        return a*b
+    }
+    fun na(a: Int, b:Int) : Int{
+        return a/b
     }
 }
 
-fun doubleSun(a: Int): Int? {
-    if (a >= 10 && a < 100) {
-        return a / 10 + a % 10
-    } else {
-        return null
+class Math2(var a: Int, var b:Int){
+    fun plus() : Int{
+        return a+b
     }
-}
-
-fun gugudan() {
-    for (a in 1..9) {
-        for (b in 1..9) {
-            println("${a} * ${b} = ${a * b}")
-        }
+    fun minus() : Int{
+        return a-b
+    }
+    fun gop() : Int{
+        return a*b
+    }
+    fun na() : Int{
+        return a/b
     }
 }
