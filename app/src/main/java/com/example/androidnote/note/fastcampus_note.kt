@@ -2,40 +2,29 @@ package com.example.androidnote.note
 
 
 fun main() {
-    val ma1: Math1 = Math1()
-    val m2 = ma1.plus(2,45)
-    println(m2)
-    val ma2: Math2 = Math2(20,310)
-    val m3 = ma2.plus()
-    println(m3)
+
+    val myCard: Card = Card("이승민", "940803", 500000)
+    myCard.save(500000)
+    myCard.check()
+    myCard.out(250000)
+    myCard.check()
 }
 
-class Math1(){
-    fun plus(a: Int, b:Int) : Int{
-        return a+b
+class Card(val name: String, val birth: String, var money: Int) {
+    fun create() {
+        println("${birth} 년생 ${name}님의 계좌가 생성되었습니다.")
     }
-    fun minus(a: Int, b:Int) : Int{
-        return a-b
-    }
-    fun gop(a: Int, b:Int) : Int{
-        return a*b
-    }
-    fun na(a: Int, b:Int) : Int{
-        return a/b
-    }
-}
 
-class Math2(var a: Int, var b:Int){
-    fun plus() : Int{
-        return a+b
+    fun check() {
+        println("게좌의 잔고는 ${money}원 입니다.")
     }
-    fun minus() : Int{
-        return a-b
+
+    fun out(outMoney: Int) {
+        money -= outMoney
     }
-    fun gop() : Int{
-        return a*b
+
+    fun save(saveMoney: Int) {
+        money += saveMoney
     }
-    fun na() : Int{
-        return a/b
-    }
+
 }
