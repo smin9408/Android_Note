@@ -26,6 +26,7 @@ class Card(val name: String, val birth: String, var money: Int) {
     fun save(saveMoney: Int) {
         money += saveMoney
         val hue:String
+        val hue2:String
 
 
     }
