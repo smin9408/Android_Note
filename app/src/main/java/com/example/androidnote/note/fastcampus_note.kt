@@ -27,8 +27,10 @@ class Card(val name: String, val birth: String, var money: Int) {
         money += saveMoney
         val hue:String
         val hue2:String
+        val todat:TurningPoint
 
 
     }
 
 }
+class TurningPoint(){}
