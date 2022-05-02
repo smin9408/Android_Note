@@ -1,47 +1,38 @@
 package com.example.androidnote.note
 
-fun main(args: Array<String>) {
+fun main() {
 
-    val bus = Bus("v6", "bus")
-
-    bus.drive()
-
-    val superCar = SuperCar()
-    superCar.drive()
+    val student = Student()
+    val teacher = Teacher()
+    student.sleep()
 }
 
-// class는 생성 시 private이기 때문에 open 키워드를 붙여야 상속이 가능하다.
-// 부모 class의 함수도 마찬가지로 open 키워드를 사용해야 자식 class에서 override 가능
-abstract class Car() {
-    open fun drive() {
-
+// Interface
+// 인터페이스는 약속
+// 인터페이스를 구현하는 클래스는 인터페이스가 가지고 있는 기능을 반드시 구현해야 한다.
+// 인터페이스 내부에서 구현되어 있다면 클래스에서는 구현하지 않아도 된다.
+// 인터페이스는 생성자가 없다 -> 인스턴스화 시킬 수 없다.
+interface Person {
+    fun eat() {
+        println("먹는다")
     }
 
-    fun stop() {
-
+    fun sleep() {
+        println("잔다")
     }
 
-    abstract fun new()
+    abstract fun study()
 }
 
-class SuperCar() : Car() {
-    override fun drive() {
-        println("더 빨리!")
+class Student() : Person {
+    override fun study() {
     }
 
-    override fun new() {
-    }
-}
-
-class Electronic(engine: String, body: String) : Car() {
-    override fun new() {
-
-    }
 
 }
 
-class Bus(engine: String, body: String) : Car() {
-    override fun new() {
+class Teacher() : Person {
+    override fun study() {
 
     }
 
