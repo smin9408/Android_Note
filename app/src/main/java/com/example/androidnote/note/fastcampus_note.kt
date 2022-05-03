@@ -1,40 +1,25 @@
 package com.example.androidnote.note
 
-fun main() {
 
-    val student = Student()
-    val teacher = Teacher()
-    student.sleep()
-}
+// Generic(제너릭)
+// 타입을 체크하는 기능
 
-// Interface
-// 인터페이스는 약속
-// 인터페이스를 구현하는 클래스는 인터페이스가 가지고 있는 기능을 반드시 구현해야 한다.
-// 인터페이스 내부에서 구현되어 있다면 클래스에서는 구현하지 않아도 된다.
-// 인터페이스는 생성자가 없다 -> 인스턴스화 시킬 수 없다.
-interface Person {
-    fun eat() {
-        println("먹는다")
-    }
+fun main(args: Array<String>) {
 
-    fun sleep() {
-        println("잔다")
-    }
+    // 제너릭을 사용하지 않은 경우
+    val list1 = listOf(1, 2, 3, "가")
+    val b: String = list1[3].toString() // 형 변환(타입 변환)
 
-    abstract fun study()
-}
+    // 제너릭을 사용하는 경우 -> 타입이 안전하다.
+    val list2 = listOf<String>("a", "b", "c")
+    val c: String = list2[2] // String 이라는 것을 보장 받는다.
 
-class Student() : Person {
-    override fun study() {
-    }
+    // 강한 타입을 체크 할 수 있다.
+    val list3 = listOf(1, 2, 3, 4, "a", "b", "c", 3.14)
+    val list4 = listOf<Int>(1, 2, 3, "a") // 강한 타입 체크
 
-
-}
-
-class Teacher() : Person {
-    override fun study() {
-
-    }
-
-
+    // 제너릭을 사용하지 않은 경우
+    val list5 = listOf<Any>(1, 2, 3, "가") // -> Any
+    // 부모 : Any
+    // 자식 : String, Int, Float, Boolean, ...
 }
