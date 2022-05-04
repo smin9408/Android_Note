@@ -1,66 +1,30 @@
 package com.example.androidnote.note
 
+import java.util.*
+
 
 // Generic(제너릭)
 // 타입을 체크하는 기능
 
-fun main(args: Array<String>) {
+fun main(args:Array<String>){
+    var q : Queue<Int> = LinkedList() // 큐로 선언하고 LinkedList 로 할당
+    q.add(1)    // 객체를 큐에 추가 (큐가 가득찬 상태이면 illegalStateException 발생)
+    q.offer(3)  // 객체를 큐에 추가 (큐가 가득찬 상태이면 false 반환)
+    q.add(2)
+    println(q)
 
-    val name = "승민"
+    println()
 
-    println(name[1]) // 민
-    var count = 0
-    val names2 = arrayOf("Braund", "Mr. Owen Harris")
-    val names = arrayOf(
-        "Braund, Mr. Owen Harris",
-        "Cumings, Mrs. John Bradley (Florence Briggs Thayer)",
-        "Heikkinen, Miss. Laina",
-        "Futrelle, Mrs. Jacques Heath (Lily May Peel)",
-        "Allen, Mr. William Henry",
-        "Moran, Mr. James",
-        "McCarthy, Mr. Timothy J",
-        "Palsson, Master. Gosta Leonard",
-        "Johnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)",
-        "Nasser, Mrs. Nicholas (Adele Achem)",
-        "Sandstrom, Miss. Marguerite Rut",
-        "Bonnell, Miss. Elizabeth",
-        "Saundercock, Mr. William Henry",
-        "Andersson, Mr. Anders Johan",
-        "Vestrom, Miss. Hulda Amanda Adolfina",
-        "Hewlett, Mrs. (Mary D Kingcome) ",
-        "Rice, Master. Eugene",
-        "Williams, Mr. Charles Eugene",
-        "Vander Planke, Mrs. Julius (Emelia Maria Vandemoortele)",
-        "Masselmani, Mrs. Fatima",
-        "Fynney, Mr. Joseph J",
-        "Beesley, Mr. Lawrence",
-        "McGowan, Miss. Anna", "Annie",
-        "Sloper, Mr. William Thompson",
-        "Palsson, Miss. Torborg Danira",
-        "Asplund, Mrs. Carl Oscar (Selma Augusta Emilia Johansson)",
-        "Emir, Mr. Farred Chehab",
-        "Fortune, Mr. Charles Alexander",
-        "Dwyer, Miss. Ellen", "Nellie",
-        "Todoroff, Mr. Lalio"
-    )
+    println(q.element())    // 맨 앞 객체 리턴 (큐가 비어있는 상태이면 NoSuchElementException 발생)
+    println(q.elementAt(1)) // 인덱스 값의 객체 리턴
+    println(q.peek())   // 맨 앞 객체 리턴 (큐가 비어있는 상태이면 false 반환)
 
-    for(name2 in names2){
-        for(a in name2){
-            if(a.toString().contains("M")){
-                println("이게되네")
-            }
-        }
-    }
+    println()
 
-    for (name in names) {
-        for (cha in name) {
-            if (cha.toString().contains("M")) {
-                count ++
-            }
-        }
-    }
+    q.remove() // 1을 삭제하고 반환  // 삭제하면서 객체 반환 (큐가 비어있는 상태이면 NoSuchElementException 발생)
+    println(q) // [3]
+    var tmp = q.poll()  // 삭제하면서 객체 반환 (큐가 비어있는 상태이면 false 반환)
+    println(q)
+    println("두번째 삭제한 객체 : $tmp")
 
-    println(count)
 }
-
-// 문자열도 배열처럼 보네??
