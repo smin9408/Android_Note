@@ -6,20 +6,61 @@ package com.example.androidnote.note
 
 fun main(args: Array<String>) {
 
-    // 제너릭을 사용하지 않은 경우
-    val list1 = listOf(1, 2, 3, "가")
-    val b: String = list1[3].toString() // 형 변환(타입 변환)
+    val name = "승민"
 
-    // 제너릭을 사용하는 경우 -> 타입이 안전하다.
-    val list2 = listOf<String>("a", "b", "c")
-    val c: String = list2[2] // String 이라는 것을 보장 받는다.
+    println(name[1]) // 민
+    var count = 0
+    val names2 = arrayOf("Braund", "Mr. Owen Harris")
+    val names = arrayOf(
+        "Braund, Mr. Owen Harris",
+        "Cumings, Mrs. John Bradley (Florence Briggs Thayer)",
+        "Heikkinen, Miss. Laina",
+        "Futrelle, Mrs. Jacques Heath (Lily May Peel)",
+        "Allen, Mr. William Henry",
+        "Moran, Mr. James",
+        "McCarthy, Mr. Timothy J",
+        "Palsson, Master. Gosta Leonard",
+        "Johnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)",
+        "Nasser, Mrs. Nicholas (Adele Achem)",
+        "Sandstrom, Miss. Marguerite Rut",
+        "Bonnell, Miss. Elizabeth",
+        "Saundercock, Mr. William Henry",
+        "Andersson, Mr. Anders Johan",
+        "Vestrom, Miss. Hulda Amanda Adolfina",
+        "Hewlett, Mrs. (Mary D Kingcome) ",
+        "Rice, Master. Eugene",
+        "Williams, Mr. Charles Eugene",
+        "Vander Planke, Mrs. Julius (Emelia Maria Vandemoortele)",
+        "Masselmani, Mrs. Fatima",
+        "Fynney, Mr. Joseph J",
+        "Beesley, Mr. Lawrence",
+        "McGowan, Miss. Anna", "Annie",
+        "Sloper, Mr. William Thompson",
+        "Palsson, Miss. Torborg Danira",
+        "Asplund, Mrs. Carl Oscar (Selma Augusta Emilia Johansson)",
+        "Emir, Mr. Farred Chehab",
+        "Fortune, Mr. Charles Alexander",
+        "Dwyer, Miss. Ellen", "Nellie",
+        "Todoroff, Mr. Lalio"
+    )
 
-    // 강한 타입을 체크 할 수 있다.
-    val list3 = listOf(1, 2, 3, 4, "a", "b", "c", 3.14)
-    val list4 = listOf<Int>(1, 2, 3, "a") // 강한 타입 체크
+    for(name2 in names2){
+        for(a in name2){
+            if(a.toString().contains("M")){
+                println("이게되네")
+            }
+        }
+    }
 
-    // 제너릭을 사용하지 않은 경우
-    val list5 = listOf<Any>(1, 2, 3, "가") // -> Any
-    // 부모 : Any
-    // 자식 : String, Int, Float, Boolean, ...
+    for (name in names) {
+        for (cha in name) {
+            if (cha.toString().contains("M")) {
+                count ++
+            }
+        }
+    }
+
+    println(count)
 }
+
+// 문자열도 배열처럼 보네??
