@@ -1,42 +1,37 @@
 package com.example.androidnote.note
 
-// 문자열의 숫자와 짝수(true)와 홀수(false)를 알려주는 solution을 만드세요
 
 fun main(){
 
-    val result1 = solution("abcd")
-    println(result1)
-    // [4, true]
+    solution(3)
+    // *
+    // **
+    // ****
 
-    val result2 = solution("abcde")
-    println(result2)
-    // [5, false]
+    solution(5)
+    // *
+    // **
+    // ****
+    // ********
+    // ****************
 }
 
+fun solution(star : Int){
 
-fun solution(str : String) : ArrayList<String> {
+    // 별을 몇개 찍을지 알려주는 count
+    var count = 1
 
-    // 길이 구하는 것 하나랑
-    val length = str.length
-    //println(length)
+    for(i in 1..star){
 
-    // 구해진 길이가 홀수인지 짝수인지 알려주는 기능
 
-    /*
-    var isEven = true
-    if(length % 2 == 0){
-        //println("짝수")
-        isEven = true
-    } else {
-        //println("홀수")
-        isEven = false
+        for(j in 1..count){
+            print("*")
+        }
+
+        println("")
+
+        count = count * 2
+
     }
-    */
-
-    val isEven = length % 2 == 0
-
-    val resultArray = arrayListOf<String>(length.toString(), isEven.toString())
-
-    return resultArray
 
 }
