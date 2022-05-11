@@ -1,36 +1,43 @@
 package com.example.androidnote.note
 
-// 리스트에 있는 숫자들을 모두 더한 후
-// 리스트의 갯수로 나눈 값을 출력하는 solution을 만드세요
+// 리스트의 숫자를 뒤집어서 반환하는 solution 을 만드세요
 
 fun main(){
 
-    val arr1 = arrayListOf<String>("1", "2")
+    val arr1 = arrayListOf(1,2,3,4,5)
     val result1 = solution(arr1)
     println(result1)
-    // 1.5
+    // [5,4,3,2,1]
 
-    val arr2 = arrayListOf<String>("1", "2", "3", "4","5")
+    val arr2 = arrayListOf(2,4,6,8)
     val result2 = solution(arr2)
     println(result2)
-    // 3.0
-
+    //  [8,6,4,2]
 
 }
 
 
-fun solution(arr: ArrayList<String>): Double {
+fun solution(arr: ArrayList<Int>) : ArrayList <String> {
 
-    var sum = 0
-    var arrLength = arr.size
+    val length = arr.size
 
-    for (i in arr){
-        //println(i.toInt())
-        sum += i.toInt()
+    //println(length)
+
+    val resultArr = mutableListOf<String>()
+
+    for (i in 0..length-1){ // length-1 = 4 -> 0 1 2 3 4 -> arr[0] arr[1] arr[2] arr[3] arr[4]
+        // println(arr[length-1-i])
+        // length-1 = 4
+        // 4-0 = 4 arr[4]
+        // 4-1 = 3 arr[3]
+        // 4-2 = 2 arr[2]
+        // 4-3 = 1 arr[1]
+        // 4-4 = 0 arr[0]
+        resultArr.add(arr[length-1-i].toString())
     }
 
-    // println(sum)
-    // println(arrLength)
-    // println(sum.toDouble() / arrLength.toDouble())
-    return sum.toDouble() / arrLength.toDouble()
+    // println(resultArr)
+
+    return resultArr as ArrayList<String>
+
 }
