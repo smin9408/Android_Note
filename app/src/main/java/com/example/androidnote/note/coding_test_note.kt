@@ -1,43 +1,49 @@
 package com.example.androidnote.note
 
-// 리스트의 숫자를 뒤집어서 반환하는 solution 을 만드세요
+// 숫자를 받아서 팩토리얼 값을 출력하는 함수를 만드세요
+// 3! -> 3 x 2 x 1 = 6
+// 4! -> 4 x 3 x 2 x 1 = 24
+// 5! -> 5 x 4 x 3 x 2 x 1 = 120
 
 fun main(){
 
-    val arr1 = arrayListOf(1,2,3,4,5)
-    val result1 = solution(arr1)
+    val result1 = solution(3)
     println(result1)
-    // [5,4,3,2,1]
+    // 6
 
-    val arr2 = arrayListOf(2,4,6,8)
-    val result2 = solution(arr2)
+    val result2 = solution(4)
     println(result2)
-    //  [8,6,4,2]
+    // 24
+
+    val result3 = solution(5)
+    println(result3)
+    // 120
 
 }
 
 
-fun solution(arr: ArrayList<Int>) : ArrayList <String> {
+fun solution( number : Int ) : Int {
 
-    val length = arr.size
+    // 3 x 2 x 1 -> 6
+    // 1 x 2 x 3 -> 6
 
-    //println(length)
+    var result = 1
 
-    val resultArr = mutableListOf<String>()
-
-    for (i in 0..length-1){ // length-1 = 4 -> 0 1 2 3 4 -> arr[0] arr[1] arr[2] arr[3] arr[4]
-        // println(arr[length-1-i])
-        // length-1 = 4
-        // 4-0 = 4 arr[4]
-        // 4-1 = 3 arr[3]
-        // 4-2 = 2 arr[2]
-        // 4-3 = 1 arr[1]
-        // 4-4 = 0 arr[0]
-        resultArr.add(arr[length-1-i].toString())
+    for (i in 1..number){
+        //println(i)
+        result *= i // result = result * i
+        // i = 1 -> result -> 1 * 1 = 1
+        // i = 2 -> result -> 1 * 2 = 2
+        // i = 3 -> result -> 2 * 3 = 6
+        // i = 4 -> result -> 6 * 4 = 24
+        // i = 5 -> result -> 24 * 5 = 120
     }
 
-    // println(resultArr)
-
-    return resultArr as ArrayList<String>
+    return result
 
 }
+
+
+
+
+
