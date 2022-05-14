@@ -1,62 +1,69 @@
 package com.example.androidnote.note
 
-// 문자의 갯수를 세는 solution을 만들어주세요
-// 문자열이 많이 나온 순서대로 정렬됩니다.
-// 문자열 갯수가 같은 경우는 없다고 가정합니다. (a 는 5개 b 는 5개 이런 경우는 없습니다.)
+// 리스트의 가장 작은 숫자를 찾아서 제거하고
+// 남은 숫자들을 모두 더해서 값을 출력해주는 함수를 만드세요
 
 fun main(){
 
-    val result1 = solution("aabbaabccbb")
+    val input1 = arrayListOf(1,2,3,4,5)
+    val result1 = solution(input1)
     println(result1)
-    // {b=5, a=4, c=2}
+    // 14
 
-    val result2 = solution("ccddcddaaq")
+    val input2 = arrayListOf(10,8,6,4,2)
+    val result2 = solution(input2)
     println(result2)
-    // {d=4, c=3, a=2, q=1}
+    // 28
+
+    val input3 = arrayListOf(6, 3, 9)
+    val result3 = solution(input3)
+    println(result3)
+    // 15
 
 }
 
 
-fun solution( str : String ): Map<String, Int> {
+fun solution(list: ArrayList<Int>) : Int {
 
-    // 일단은 문자열에 어떤 알파벳이 있는지 찾기
+    /*
+    val min = list.minOrNull()
+    println(min)
 
-    val resultArr = mutableListOf<String>()
+    list.remove(min)
 
-    for(i in str) {
-        resultArr.add(i.toString())
+    println(list)
+
+    var result = 0
+
+    for (i in list) {
+        result += i
+    }
+    */
+
+    var smallest = list[0]
+
+    for (i in 1..list.size-1){
+        // println(list[i])
+        if(smallest > list[i]){
+            smallest = list[i]
+        }
     }
 
-    //println(resultArr)
-    //println(resultArr.distinct())
+    list.remove(smallest)
 
-    val distinctList = resultArr.distinct()
-    val countList =  mutableListOf<Int>()
-    // 어떤 알파벳이 몇번 사용되었는지 세기
+    var result = 0
 
-
-    for (i in distinctList){ // a b c
-        val count = resultArr.filter { it == i}.count()
-        // println(count)
-        countList.add(count)
+    for (i in list) {
+        result += i
     }
 
-
-    // 알파벳이 많이 나온 순서대로 정렬
-
-    val resultMap = mutableMapOf<String, Int>()
-
-    for (i in 0..distinctList.count() - 1){
-        //println(distinctList[i])
-        //println(countList[i])
-        resultMap[distinctList[i]] = countList[i]
-    }
-
-    // println(resultMap.toList().sortedBy {it.second}.reversed().toMap() )
-
-    return resultMap.toList().sortedBy {it.second}.reversed().toMap()
-
+    return result
 }
+
+
+
+
+
 
 
 
