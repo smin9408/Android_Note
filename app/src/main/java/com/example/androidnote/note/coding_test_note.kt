@@ -1,52 +1,47 @@
 package com.example.androidnote.note
 
-// 가장 가까운 사람의 이름을 알려주는 함수를 완성하세요
-// 거리는 음수가 아닙니다 / 같은 거리는 없습니다.
+// 여러개의 동전 중
+// 가장 동전의 수를 적게 받을 수 있는 solution 을 만드세요
+
+// 1360 -> 500 x 2 / 100 x 3 / 50 x 1 / 10 x 1 = 7
+// 1510 -> 500 x 3 / 10 x 1 = 4
 
 fun main(){
 
-    val result1 = solution("민수 : 3, 민지  : 4, 찬혁 : 1.5, 지우 : 2")
+    val coins1 = arrayListOf<Int>(500, 100, 50, 10)
+    val money1 = 1360
+    val result1 = solution(coins1, money1)
     println(result1)
-    // 찬혁
+    // 7
 
-    val result2 = solution("지영 : 3.7, 민영  : 1.2 , 해피 : 2.7, 퍼니 : 3")
+    val coins2 = arrayListOf<Int>(500, 100, 50, 10)
+    val money2 = 1510
+    val result2 = solution(coins2, money2)
     println(result2)
-    // 민영
+    // 4
+
 
 }
 
 
-fun solution(str: String) : String {
+fun solution(coins: ArrayList<Int>, money: Int) : Int{
 
-    val list = str.split(",")
-    //println(list)
+    // 1360 -> 500 x 2 -> 360
+    // 360 -> 100 x 3 -> 60
+    // 60 -> 50 x 1 -> 10
+    // 10 -> 10 x 1 -> 끝
 
-    val nameList = mutableListOf<String>()
-    val distanceList = mutableListOf<Double>()
+    var resultCount = 0
+    var currentMoney = money
 
-    for (item in list) {
-
-        val name = item.split(":")[0]
-        val distance = item.split(":")[1].toDouble()
-
-        nameList.add(name)
-        distanceList.add(distance)
-
+    for(coin in coins) {
+        // 500
+        resultCount = resultCount + currentMoney / coin // 500원으로 나눈 몫 -> 2
+        currentMoney = currentMoney % coin // 500원으로 나눈 나머지 -> 360
+        //println(resultCount)
+        //println(currentMoney)
     }
 
-    //println(nameList)
-    //println(distanceList)
+    return resultCount
 
-    val minDistance = distanceList.minOrNull()
-
-    //println(minDistance)
-
-    val resultIndex = distanceList.indexOf(minDistance)
-
-    //println(resultIndex)
-
-
-
-    return nameList[resultIndex].trim()
 }
-
