@@ -7,17 +7,14 @@ fun main(){
 
     val input1 = arrayListOf(1,2,3,4,5)
     val result1 = solution(input1)
-    println(result1)
     // 14
 
     val input2 = arrayListOf(10,8,6,4,2)
     val result2 = solution(input2)
-    println(result2)
     // 28
 
     val input3 = arrayListOf(6, 3, 9)
     val result3 = solution(input3)
-    println(result3)
     // 15
 
 }
@@ -53,6 +50,7 @@ class Solution {
 
     }
 
+    @Annotation
     //실제 자물쇠 부분을 검사하는 함수
     fun checkLock(_extendLock: Array<IntArray>): Boolean {
         var size = _extendLock.size / 3
