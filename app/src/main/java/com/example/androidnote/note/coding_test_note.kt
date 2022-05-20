@@ -63,6 +63,19 @@ class Solution {
         return true
     }
 
+    // 자물쇠 배열을 확장해주는 함수
+    // 커밋 임시
+    fun plusLock(_lock: Array<IntArray>): Array<IntArray> {
+        var size = _lock.size * 3
+        var temp = Array(size) { IntArray(size) { 0 } }
+
+        for (i in 0 until size / 3) {
+            for (j in 0 until size / 3) {
+                temp[size / 3 + i][size / 3 + j] = _lock[i][j]
+            }
+        }
+        return temp
+    }
 
     //회전시키는 함수
     fun rotate(_key: Array<IntArray>): Array<IntArray> {
