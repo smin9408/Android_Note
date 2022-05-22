@@ -50,7 +50,6 @@ class Solution {
 
     }
 
-    @Annotation
     //실제 자물쇠 부분을 검사하는 함수
     fun checkLock(_extendLock: Array<IntArray>): Boolean {
         var size = _extendLock.size / 3
